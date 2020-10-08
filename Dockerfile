@@ -1,9 +1,9 @@
 FROM node:12-buster-slim
 
 LABEL version="1.0.3"
-LABEL repository="https://github.com/sma11black/hexo-action"
-LABEL homepage="https://sma11black.github.io"
-LABEL maintainer="sma11black <smallblack@outlook.com>"
+LABEL repository="https://github.com/nightcoffee/hexo-action"
+LABEL homepage="https://nightcoffee.github.io"
+LABEL maintainer="nightcoffee <nightcoffee@ydkf.me>"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY sync_deploy_history.js /sync_deploy_history.js
