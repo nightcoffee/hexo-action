@@ -6,10 +6,6 @@ inputs:
     description: 'SSH Host'
     required: true
     default: ''
-  ssh_port:
-    description: 'SSH Port'
-    required: true
-    default: ''
   deploy_key:
     description: 'The deploy key for SSH Server'
     required: true
@@ -18,12 +14,6 @@ inputs:
     description: 'Git commit messages to your GitHub Pages repository.'
     required: false
     default: ''
-  ssh_folder:
-    description: 'SSH Folder'
-    required: true
-  ssh_username:
-    description: 'SSH Username'
-    required: true
 outputs:
   notify: # id of output
     description: 'The notification of deployment result'
@@ -32,9 +22,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.ssh_host }}
-    - ${{ inputs.ssh_port }}
-    - ${{ inputs.ssh_username }}
-    - ${{ inputs.ssh_folder }}
     - ${{ inputs.deploy_key }}
     - ${{ inputs.commit_msg }}
 branding:
