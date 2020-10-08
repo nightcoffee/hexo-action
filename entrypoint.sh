@@ -14,7 +14,7 @@ ssh-keyscan -t rsa "$INPUT_SSH_HOST" >> /root/.ssh/known_hosts
 
 # install hexo env
 npm install hexo-cli -g
-npm install hexo-deployer-git --save
+npm install hexo-deployer-rsync --save
 
 # pull original publish repo
 # NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
