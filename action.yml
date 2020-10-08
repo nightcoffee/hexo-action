@@ -6,6 +6,10 @@ inputs:
     description: 'SSH Host'
     required: true
     default: ''
+  ssh_port:
+    description: 'SSH Port'
+    required: true
+    default: ''
   deploy_key:
     description: 'The deploy key for SSH Server'
     required: true
