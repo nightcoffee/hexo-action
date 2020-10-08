@@ -6,7 +6,7 @@ set -e
 mkdir -p /root/.ssh/
 echo "$INPUT_DEPLOY_KEY" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
-ssh-keyscan -t rsa "$INPUT_SSH_HOST" >> /root/.ssh/known_hosts
+ssh-keyscan -p "$INPUT_SSH_PORT" -t rsa "$INPUT_SSH_HOST" >> /root/.ssh/known_hosts
 
 # setup deploy git account
 # git config --global user.name "$INPUT_USER_NAME"
