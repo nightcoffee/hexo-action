@@ -26,6 +26,7 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.ssh_host }}
+    - ${{ inputs.ssh_port }}
     - ${{ inputs.deploy_key }}
     - ${{ inputs.commit_msg }}
 branding:
