@@ -2,22 +2,28 @@ name: 'Hexo Action'
 description: 'Hexo CI/CD action for automating deployment.'
 author: 'sma11black'
 inputs:
-  user_name:
-    description: 'Github user name'
+  ssh_host:
+    description: 'SSH Host'
     required: true
-    default: 'github-actions[bot]'
-  user_email:
-    description: 'Github email'
+    default: ''
+  ssh_port:
+    description: 'SSH Port'
     required: true
-    default: '41898282+github-actions[bot]@users.noreply.github.com'
+    default: ''
   deploy_key:
-    description: 'The deploy key for Github Pages repo'
+    description: 'The deploy key for SSH Server'
     required: true
     default: ''
   commit_msg:
     description: 'Git commit messages to your GitHub Pages repository.'
     required: false
     default: ''
+  ssh_folder:
+    description: 'SSH Folder'
+    required: true
+  ssh_username:
+    description: 'SSH Username'
+    required: true
 outputs:
   notify: # id of output
     description: 'The notification of deployment result'
@@ -25,8 +31,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.user_name }}
-    - ${{ inputs.user_email }}
+    - ${{ inputs.ssh_host }}
+    - ${{ inputs.ssh_port }}
+    - ${{ inputs.ssh_username }}
+    - ${{ inputs.ssh_folder }}
     - ${{ inputs.deploy_key }}
     - ${{ inputs.commit_msg }}
 branding:
